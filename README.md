@@ -1,0 +1,1 @@
+# roboshot-jenkins-shared-library
