@@ -5,7 +5,7 @@ def codeQuality() {
 }
 
 def codechecks () {
-    if (BRANCH_NAME == "main" || TAG_NAME ==~ ".*") {
+    if (env.BRANCH_NAME == "main" || TAG_NAME ==~ ".*") {
         stage('style checks') {
         echo 'style checks'
     }
@@ -17,7 +17,7 @@ def codechecks () {
 }
 
 def artifacts() {
-    if (TAG_NAME ==~ ".*"){
+    if (env.TAG_NAME ==~ ".*"){
 
         stage ('Downoad Dependencies'){
             echo 'Download dependencies'
