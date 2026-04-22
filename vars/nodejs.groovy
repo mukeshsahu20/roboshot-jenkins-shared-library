@@ -2,7 +2,7 @@ pipeline{
 
     agent any
 
- stage('unit tests') {
+            stage('unit tests') {
                 when {
                     anyOf {
                         branch 'main'
@@ -32,7 +32,7 @@ pipeline{
             stage('Publish artifact') {
                 when { tag "*" }
                 steps {
-                    echo "Publish artifact only when there is Tag"
+                    echo "Publish artifact onlly when there is Tag"
                 }
             }
 
