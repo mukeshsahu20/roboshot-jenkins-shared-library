@@ -5,18 +5,12 @@ def call(){
          sh 'env'
          common.codeQuality()
 
-//         if (branch == "main" or tag ==~ "*")
-//            stage('style checks') {
-//                when {
-//                    anyOf {
-//                        branch 'main'
-//                        tag "*"
-//                    }
-//                }
-//                steps {
-//                    echo "code quality"
-//                }
-//            }
+         if (branch == "main" || tag ==~ "*") {
+             stage('style checks') {
+               echo 'style checks'
+             }
+         }
+
 ////
 //            stage('unit tests') {
 //                when {
