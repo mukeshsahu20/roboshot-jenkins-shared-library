@@ -1,9 +1,9 @@
 def call(){
     node {
 
-      if (! env.TAG_NAME){
-          env.TAG_NAME = ""
-      }
+//      if (! env.TAG_NAME){
+//          env.TAG_NAME = ""
+//      }
 
          common.codeQuality()
          common.codechecks()
