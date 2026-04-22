@@ -2,9 +2,10 @@ def call(){
     node {
 
 
-
+         sh 'env'
          common.codeQuality()
 
+//         if (branch == "main" or tag ==~ "*")
 //            stage('style checks') {
 //                when {
 //                    anyOf {
@@ -16,7 +17,7 @@ def call(){
 //                    echo "code quality"
 //                }
 //            }
-//
+////
 //            stage('unit tests') {
 //                when {
 //                    anyOf {
