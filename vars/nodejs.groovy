@@ -6,11 +6,8 @@ def call(){
       }
 
          common.codeQuality()
-         common.stylechecks()
+         common.codechecks()
          common.artifacts()
-
-
-
 
 
         }
