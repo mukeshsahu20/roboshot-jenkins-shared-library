@@ -1,7 +1,23 @@
+//def codeQuality() {
+//    stage('code quality') {
+//        withCredentials([usernamepassword(credentialsId: 'SONAR', passwordVariable: 'sonarPass', usernameVariable: 'sonarUser')]) {
+//            bat  ''' sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Admin@123456 -Dsonar.projectKey=${COMPONENT} -Dsonar.qualitygate.wait=true '''
+//        }
+//    }
+//}
+
+
 def codeQuality() {
     stage('code quality') {
-        withCredentials([usernamepassword(credentialsId: 'SONAR', passwordVariable: 'sonarPass', usernameVariable: 'sonarUser')]) {
-            bat  ''' sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Admin@123456 -Dsonar.projectKey=${COMPONENT} -Dsonar.qualitygate.wait=true '''
+        withCredentials([usernamePassword(credentialsId: 'SONAR', passwordVariable: 'sonarPass', usernameVariable: 'sonarUser')]) {
+            bat """
+            sonar-scanner ^
+            -Dsonar.host.url=http://localhost:9000 ^
+            -Dsonar.login=%sonarUser% ^
+            -Dsonar.password=%sonarPass% ^
+            -Dsonar.projectKey=${COMPONENT} ^
+            -Dsonar.qualitygate.wait=true
+            """
         }
     }
 }
