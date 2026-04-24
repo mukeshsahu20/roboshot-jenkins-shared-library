@@ -14,7 +14,7 @@ def codeQuality() {
             sonar-scanner ^
             -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.login=%sonarUser% ^
-            -Dsonar.password=%sonarPass% ^
+            -Dsonar.token=%sonarPass% ^
             -Dsonar.projectKey=${COMPONENT} ^
             -Dsonar.qualitygate.wait=true
             """
