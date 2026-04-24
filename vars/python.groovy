@@ -4,7 +4,7 @@ def call() {
 
         common.codeCheckout()
         common.codeQuality()
-        common.codeChecks()
+        common.codechecks()
         common.artifacts()
 
     }
