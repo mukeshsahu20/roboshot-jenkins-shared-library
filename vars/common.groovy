@@ -7,6 +7,14 @@
 //}
 
 
+def codeCheckout() {
+    stage('code checkout') {
+    git branch: 'main', url: "https://github.com/mukeshsahu20/${COMPONENT}.git"
+        }
+    }
+
+
+
 def codeQuality() {
     stage('code quality') {
         withCredentials([usernamePassword(credentialsId: 'SONAR', passwordVariable: 'sonarPass', usernameVariable: 'sonarUser')]) {
