@@ -6,7 +6,7 @@ def call(){
             common.codechecks()
             common.artifacts()
         } catch (Exceptions e) {
-      echo "mail bcc: '', body: '', cc: '', from: 'mukeshsahu20@gmail.com', replyTo: '', subject: 'Pipeline job failed', to: 'mukeshsahu20@gmail.com'"
+      mail bcc: '', body: '', cc: '', from: 'mukeshsahu20@gmail.com', replyTo: '', subject: 'Pipeline job failed', to: 'mukeshsahu20@gmail.com'
         }
 
 //      if (! env.TAG_NAME){
