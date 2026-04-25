@@ -1,7 +1,9 @@
 def call() {
+    env.APPTYPE = "nodejs"
     node {
         try {
 
+            common.codeCheckout()
             common.codeQuality()
             common.codechecks()
             common.artifacts()

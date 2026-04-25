@@ -45,12 +45,14 @@ def codechecks () {
 def artifacts() {
     if (env.TAG_NAME ==~ ".*"){
 
-        stage ('Downoad Dependencies'){
-            echo 'Download dependencies'
-        }
 
-    stage ('Prepare Artifacts'){
-        echo 'Prepare Artifacts'
+    stage ('Prepare Artifacts Nodejs'){
+        if (env.APPTYPE == "nodejs") {
+            echo 'sh npm install'
+        }
+        if (env.APPTYPE == "python"){
+            echo 'sh directoly zip the file.py'
+        }
     }
 
     stage ('Publish Artifacts'){
