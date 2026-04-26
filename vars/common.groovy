@@ -51,12 +51,12 @@ def artifacts() {
             echo 'sh npm install'
         }
         if (env.APPTYPE == "python"){
-            echo 'sh directoly zip the file.py'
+            echo 'sh zip -r ${COMPONENT}-${TAG_NAME}.zip *.py ${COMPONENT}.ini requirement.txt'
         }
     }
 
     stage ('Publish Artifacts'){
-      echo 'publish Artifacts cmd to used (sh curl -v -u admin:admin123 --upload-file pom.xml http://localhost:8081/repository/maven-release/org/foo/1.0/foo-1.0.pem)'
+      echo 'publish Artifacts cmd to used (sh curl -v -u admin:admin123 --upload-file ${COMPONENT} http://localhost:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip)'
         }
      }
 }
