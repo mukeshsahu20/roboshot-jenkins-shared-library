@@ -57,7 +57,7 @@ def artifacts() {
 
     stage ('Publish Artifacts'){
 
-      echo 'STORED NEXUS creds in Jenkins - (withCredentials(usernamePassword(credentialsID: 'NEXUS', passwordVariable: 'nexusPass usernameVariable: 'nexususer'
+      echo 'STORED NEXUS creds in Jenkins - (withCredentials(usernamePassword(credentialsID: NEXUS, passwordVariable: nexusPass usernameVariable nexususer'
 
       echo 'publish Artifacts cmd to used (sh curl -v -u admin:admin123 --upload-file ${COMPONENT} http://localhost:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip)'
         }
